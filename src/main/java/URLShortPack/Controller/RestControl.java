@@ -24,7 +24,7 @@ public class RestControl {
         this.keyURLRepos=keyURLRepos;
     }
 
-    @RequestMapping(value = "/AddMapping/{Key}/{Protocol}/{URL}", method = RequestMethod.GET)
+    @RequestMapping(value = "/AddMapping/{Key}/{URL}/{Protocol}", method = RequestMethod.GET)
     public String addURLMapping(@PathVariable("Key") String key,@PathVariable("Protocol") String protocol,@PathVariable("URL") String url){
 //        if(!isValid(""+protocol+"//"+url))
 //            return "The given url is not valid";
@@ -52,7 +52,7 @@ public class RestControl {
         return "Never_sent";
     }
 
-    @RequestMapping(value = "/OverwriteMapping/{Key}/{Protocol}/{URL}", method = RequestMethod.GET)
+    @RequestMapping(value = "/OverwriteMapping/{Key}/{URL}/{Protocol}", method = RequestMethod.GET)
     public String overwriteMap(@PathVariable("Key") String key,@PathVariable("Protocol") String protocol,@PathVariable("URL") String url){
         URLMapping urlMapping = new URLMapping();
         urlMapping.setKey(key);
